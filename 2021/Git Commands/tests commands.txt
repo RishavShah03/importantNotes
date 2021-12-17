@@ -1,3 +1,6 @@
 
 //To find if something is not on the screen Page.
 expect(screen.queryByText('Previous')).not.toBeInTheDocument();
+
+//To test if an input field have no value
+expect(screen.getByLabelText('City')).toHaveValue('');
