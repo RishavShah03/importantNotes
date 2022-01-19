@@ -68,19 +68,44 @@ describe('AgentDetailWebsiteRoute', () => {
             waitForUpdateWebsite();
             });
     });  
-});  
 
-
+    //Way of using spy for mockAxiosApi call
+    test('note container in agent details', async () => {
+      const { waitForApi, spy } = mockAxiosApiWithWait<
+        typeof NoteControllerApi.prototype.getNoteByIdUsingGET1
+      >(
+        NoteControllerApi,
+        NoteControllerApi.prototype.getNoteByIdUsingGET1,
+        DefaultNoteResponse,
+      );
+  
+      await render(
+        <NotesContainer
+          entityId={DefaultAuthMeUserDetail.id}
+          entityType={CreateNoteRequestEntityTypeEnum.Agent}
+        />,
+      );
+  
+      await act(async () => {
+        waitForApi();
+      });
+  
 //Amazing Way of using map in test
-screen.getAllByRole('listitem').map((list, index) => {
-  const note = DefaultNoteResponse.notes[index];
-
-  expect(getByText(list, note.user?.fullName!)).toBeInTheDocument();
-  expect(getByText(list, note.comment!)).toBeInTheDocument();
-  expect(
-    getByText(
-      list,
-      DateTime.fromMillis(note.createdAt!).toFormat('LL/dd/yyyy')!,
-    ),
-  ).toBeInTheDocument();
-});
+      screen.getAllByRole('listitem').map((list, index) => {
+        const note = DefaultNoteResponse.notes[index];
+  
+        expect(getByText(list, note.user?.fullName!)).toBeInTheDocument();
+        expect(getByText(list, note.comment!)).toBeInTheDocument();
+        expect(
+          getByText(
+            list,
+            DateTime.fromMillis(note.createdAt!).toFormat('LL/dd/yyyy')!,
+          ),
+        ).toBeInTheDocument();
+      });
+  
+      assertAxiosSpyCalledWith<
+        typeof NoteControllerApi.prototype.getNoteByIdUsingGET1
+      >(spy, DefaultAuthMeUserDetail.id, CreateNoteRequestEntityTypeEnum.Agent);
+    });
+});  
