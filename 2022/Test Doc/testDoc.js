@@ -69,3 +69,18 @@ describe('AgentDetailWebsiteRoute', () => {
             });
     });  
 });  
+
+
+//Amazing Way of using map in test
+screen.getAllByRole('listitem').map((list, index) => {
+  const note = DefaultNoteResponse.notes[index];
+
+  expect(getByText(list, note.user?.fullName!)).toBeInTheDocument();
+  expect(getByText(list, note.comment!)).toBeInTheDocument();
+  expect(
+    getByText(
+      list,
+      DateTime.fromMillis(note.createdAt!).toFormat('LL/dd/yyyy')!,
+    ),
+  ).toBeInTheDocument();
+});
