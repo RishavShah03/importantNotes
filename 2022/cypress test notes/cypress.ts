@@ -44,3 +44,6 @@ cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable    //Be
 
 //assert or match if url is correct
 cy.url().should("include", "/(url_name)");
+
+//GO back to the previous page
+cy.go("back");
