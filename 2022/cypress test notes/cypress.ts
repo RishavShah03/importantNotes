@@ -34,7 +34,7 @@ cy.get("div[id=root]").should("exist");
 
 //'Start Learning' a button
 //Way 1
-cy.get("Start Learning");
+cy.get("Start Learning"); //Not proper way of writting, what if the name of button change
 
 //Way 2
 cy.get(".(class_name) > div > a"); //() -> represents varriable
