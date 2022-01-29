@@ -24,3 +24,6 @@ cy.contains("Data").should("exist");
 //get method
 //this command will search for div element and also give how many div are available on that page.
 cy.get("div");
+
+//Search for that particular id 'div'
+cy.get("div#root").should("exist");
