@@ -41,3 +41,6 @@ cy.get(".(class_name) > div > a"); //() -> represents varriable   //not proper w
 
 //Way 3
 cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable    //Best way
+
+//assert or match if url is correct
+cy.url().should("include", "/(url_name)");
