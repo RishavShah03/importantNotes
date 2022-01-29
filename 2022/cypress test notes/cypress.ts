@@ -58,3 +58,8 @@ cy.url().then((value) => {
 
 //Not work
 cy.log("current url is: ", cy.url());
+
+//only test to run after each saving
+it.only("only test to run after each saving", () => {
+  cy.get();
+});
