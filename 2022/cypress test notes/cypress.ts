@@ -31,3 +31,13 @@ cy.get("div#root").should("exist");
 cy.get("div#noroot").should("not.exist");
 
 cy.get("div[id=root]").should("exist");
+
+//'Start Learning' a button
+//Way 1
+cy.get("Start Learning");
+
+//Way 2
+cy.get(".(class_name) > div > a"); //() -> represents varriable
+
+//Way 3
+cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable
