@@ -47,3 +47,6 @@ cy.url().should("include", "/(url_name)");
 
 //GO back to the previous page
 cy.go("back");
+
+//A method to show log
+cy.log("(Message what ever you want to give you)");
