@@ -40,4 +40,4 @@ cy.get("Start Learning"); //Not proper way of writting, what if the name of butt
 cy.get(".(class_name) > div > a"); //() -> represents varriable   //not proper way since the class name changes according to the production and developement.
 
 //Way 3
-cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable
+cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable    //Best way
