@@ -29,3 +29,5 @@ cy.get("div");
 cy.get("div#root").should("exist");
 
 cy.get("div#noroot").should("not.exist");
+
+cy.get("div[id=root]").should("exist");
