@@ -37,7 +37,7 @@ cy.get("div[id=root]").should("exist");
 cy.get("Start Learning"); //Not proper way of writting, what if the name of button change
 
 //Way 2
-cy.get(".(class_name) > div > a"); //() -> represents varriable
+cy.get(".(class_name) > div > a"); //() -> represents varriable   //not proper way since the class name changes according to the production and developement.
 
 //Way 3
 cy.get("[data-testid = (name_of_button)]"); //() -> represents varriable
