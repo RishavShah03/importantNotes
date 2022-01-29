@@ -16,3 +16,7 @@ cy.wait(`@${WAIT_APIS.agentSearch.alias}`)
 assertMatchesRegex(`/people/${UUID_REGEX}/agent-website-onboarding`);
 
 cy.findByText(`Real hosts your website for you!`).should("exist");
+
+//Commands to use
+//this contains allows partisial words as well.
+cy.contains("Data");
