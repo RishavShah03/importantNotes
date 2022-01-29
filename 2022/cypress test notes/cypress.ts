@@ -50,3 +50,11 @@ cy.go("back");
 
 //A method to show log
 cy.log("(Message what ever you want to give you)");
+
+//will work, and use of then method
+cy.url().then((value) => {
+  cy.log("current url is: ", value);
+});
+
+//Not work
+cy.log("current url is: ", cy.url());
