@@ -63,3 +63,5 @@ cy.log("current url is: ", cy.url());
 it.only("only test to run after each saving", () => {
   cy.get();
 });
+
+cy.get("[data-testid = (name_of_button)]").type("Rishav");
