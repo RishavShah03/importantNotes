@@ -88,6 +88,11 @@ cy.debug(); //This completelly get you to the frozen state and then you can writ
 cy.contains("Rishav is smart boy", { timeout: 10000 }).should("exist");
 
 //Write special key like ctrl+c, enter, ctrl+d
+
+const filename = Math.random();
+
 cy.get("[data-testid=xterm]")
   .type("{ctrl}{c}")
-  .type("touch testscript.js{enter}");
+  .type(`touch testscript.${filename}.js{enter}`);
+
+cy.contains(`testscript.${filename}.js`).should("exist");
