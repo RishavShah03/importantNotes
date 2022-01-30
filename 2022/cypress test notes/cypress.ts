@@ -82,4 +82,4 @@ describe("Basic desktop test ", () => {
 cy.pause();
 
 //Command to use debuger of JS
-cy.debug();
+cy.debug(); //This completelly get you to the frozen state and then you can write test by seeing the page.
