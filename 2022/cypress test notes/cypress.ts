@@ -86,3 +86,8 @@ cy.debug(); //This completelly get you to the frozen state and then you can writ
 
 //Add timeout if the command is required.
 cy.contains("Rishav is smart boy", { timeout: 10000 }).should("exist");
+
+//Write special key like ctrl+c, enter, ctrl+d
+cy.get("[data-testid=xterm]")
+  .type("{ctrl}{c}")
+  .type("touch testscript.js{enter}");
