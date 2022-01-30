@@ -83,3 +83,6 @@ cy.pause();
 
 //Command to use debuger of JS
 cy.debug(); //This completelly get you to the frozen state and then you can write test by seeing the page.
+
+//Add timeout if the command is required.
+cy.contains("Rishav is smart boy", { timeout: 10000 }).should("exist");
