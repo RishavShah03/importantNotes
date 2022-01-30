@@ -96,3 +96,6 @@ cy.get("[data-testid=xterm]")
   .type(`touch testscript.${filename}.js{enter}`);
 
 cy.contains(`testscript.${filename}.js`).should("exist");
+
+//Adding right click functionality.
+cy.contains(`testscript.${filename}.js`).rightClick();
