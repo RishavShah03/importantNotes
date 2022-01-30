@@ -77,3 +77,6 @@ describe("Basic desktop test ", () => {
     });
   });
 });
+
+//Command to pause cypress execution and resume using it's UI
+cy.pause();
