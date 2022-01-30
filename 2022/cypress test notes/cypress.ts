@@ -65,3 +65,15 @@ it.only("only test to run after each saving", () => {
 });
 
 cy.get("[data-testid = (name_of_button)]").type("Rishav");
+
+//How to set the localStorage values --->
+const token =
+  "gergegergergergergegrergergergergergergergergergergergerhrthrthjrjrtrtjrtj";
+describe("Basic desktop test ", () => {
+  before(() => {
+    //It will occure once but before everything.
+    cy.then(() => {
+      window.localStorage.setItem("(name_of_item)", token); //to access the localStorage use -> window.localStorage.
+    });
+  });
+});
