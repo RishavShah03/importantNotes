@@ -99,3 +99,11 @@ cy.contains(`testscript.${filename}.js`).should("exist");
 
 //Adding right click functionality.
 cy.contains(`testscript.${filename}.js`).rightClick();
+
+//To test inside a parent container
+cy.findByText("About Content")
+  .parent()
+  .parent()
+  .within(() => {
+    cy.contains("I Work With:").should("exist");
+  });
