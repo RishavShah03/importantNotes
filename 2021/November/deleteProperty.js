@@ -7,5 +7,7 @@ delete obj.class;
 console.log(obj);
 //{name:"Rishav",roll:5}
 
-ergergegegrergg
-Just for test
+// ergergegegrergg
+// Just for test
+
+Git revert test
